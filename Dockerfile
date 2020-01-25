@@ -3,7 +3,7 @@ LABEL website="Secure Docker Images https://secureimages.dev"
 LABEL description="We secure your business from scratch."
 LABEL maintainer="hireus@secureimages.dev"
 
-ARG TEAMCITY_VERSION=2019.2
+ARG TEAMCITY_VERSION=2019.2.1
 
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
     PATH=${PATH}:/usr/lib/jvm/java-1.8-openjdk/bin \
