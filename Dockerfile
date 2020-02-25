@@ -3,7 +3,7 @@ LABEL website="Secure Docker Images https://secureimages.dev"
 LABEL description="We secure your business from scratch."
 LABEL maintainer="hireus@secureimages.dev"
 
-ARG TEAMCITY_VERSION=2019.2.1
+ARG TEAMCITY_VERSION=2019.2.2
 
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
     PATH=${PATH}:/usr/lib/jvm/java-1.8-openjdk/bin \
@@ -48,7 +48,7 @@ RUN wget -P /tmp/ https://download.jetbrains.com/teamcity/TeamCity-$TEAMCITY_VER
 
 RUN adduser -S docker ;\
     addgroup docker buildagent ;\
-    wget https://github.com/docker/compose/releases/download/v1.25.2/docker-compose-Linux-x86_64 -O /usr/local/bin/docker-compose ;\
+    wget https://github.com/docker/compose/releases/download/v1.25.4/docker-compose-Linux-x86_64 -O /usr/local/bin/docker-compose ;\
     chmod +x /usr/local/bin/docker-compose ;\
     rm -rf /tmp/* /var/cache/apk/*
 
