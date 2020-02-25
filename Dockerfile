@@ -48,7 +48,7 @@ RUN wget -P /tmp/ https://download.jetbrains.com/teamcity/TeamCity-$TEAMCITY_VER
 
 RUN adduser -S docker ;\
     addgroup docker buildagent ;\
-    wget https://github.com/docker/compose/releases/download/v1.25.4/docker-compose-Linux-x86_64 -O /usr/local/bin/docker-compose ;\
+    wget https://github.com/docker/compose/releases/download/1.25.4/docker-compose-Linux-x86_64 -O /usr/local/bin/docker-compose ;\
     chmod +x /usr/local/bin/docker-compose ;\
     rm -rf /tmp/* /var/cache/apk/*
 

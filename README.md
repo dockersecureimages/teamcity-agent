@@ -7,25 +7,25 @@ JetBrains TeamCity Agent, image is based on the Alpine base image with 0 vulnera
 Security scanning using Clair
 ```
 clair-scanner secureimages/teamcity-agent:2019.2.2-alpine-3.11.3
-2020/02/25 11:34:40 [INFO] ▶ Start clair-scanner
-2020/02/25 11:34:45 [INFO] ▶ Server listening on port 9279
-2020/02/25 11:34:45 [INFO] ▶ Analyzing c60e0e5e0b8cce2c353f5af4186afb2cde56680bc78ff165fd2368a003530178
-2020/02/25 11:34:45 [INFO] ▶ Analyzing 091a5d9157d0cfdb968563bf2848b95a2f8c2d44220525363291424e9fa63782
-2020/02/25 11:34:46 [INFO] ▶ Analyzing 6cb9f80b6b928d7f450dab54bb8ea1eb2170096ebb57ceca1ea673eff494d4d8
-2020/02/25 11:34:46 [INFO] ▶ Analyzing 50962af6600d51c098527f067a81800b0043d9dcfb888846f1c6e585cb93e9f2
-2020/02/25 11:34:46 [INFO] ▶ Analyzing fa3c93e1636a7bd025a7c4b8c39a580d3041e8dc98733c5a85b61c3ce46e8579
-2020/02/25 11:34:46 [INFO] ▶ Analyzing a3045f24c551dac1753db931d47a5339033c7e7fc0cd0ed8615f024bd99f4313
-2020/02/25 11:34:46 [INFO] ▶ Analyzing 66b3b811058b748111c1dd7aa32671954100b8279bf27ff50401f2d82c8338cc
-2020/02/25 11:34:46 [INFO] ▶ Image [secureimages/teamcity-agent:2019.2.2-alpine-3.11.3] contains NO unapproved vulnerabilities
+2020/02/25 13:46:19 [INFO] ▶ Start clair-scanner
+2020/02/25 13:46:25 [INFO] ▶ Server listening on port 9279
+2020/02/25 13:46:25 [INFO] ▶ Analyzing c60e0e5e0b8cce2c353f5af4186afb2cde56680bc78ff165fd2368a003530178
+2020/02/25 13:46:28 [INFO] ▶ Analyzing 091a5d9157d0cfdb968563bf2848b95a2f8c2d44220525363291424e9fa63782
+2020/02/25 13:46:28 [INFO] ▶ Analyzing 6cb9f80b6b928d7f450dab54bb8ea1eb2170096ebb57ceca1ea673eff494d4d8
+2020/02/25 13:46:28 [INFO] ▶ Analyzing 50962af6600d51c098527f067a81800b0043d9dcfb888846f1c6e585cb93e9f2
+2020/02/25 13:46:28 [INFO] ▶ Analyzing 035a110861a4e75c446b609eb74fdd09a418f87a42897e91707e46a62c21482a
+2020/02/25 13:46:28 [INFO] ▶ Analyzing bc8c66d1bbf13e426b5610070165610c6f777980d41197503ffc4ab7ffa9e21e
+2020/02/25 13:46:28 [INFO] ▶ Analyzing 5fc7fa4620903a9fdee215bbed03a94986df5c8bf9097a6a4db7cfae581c1188
+2020/02/25 13:46:29 [INFO] ▶ Image [secureimages/teamcity-agent:2019.2.2-alpine-3.11.3] contains NO unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
 docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.4.4 --no-progress secureimages/teamcity-agent:2019.2.2-alpine-3.11.3
-2020-02-25T09:34:49.329Z        INFO    Need to update DB
-2020-02-25T09:34:49.329Z        INFO    Downloading DB...
-2020-02-25T09:34:53.342Z        INFO    Reopening DB...
-2020-02-25T09:34:58.961Z        INFO    Detecting Alpine vulnerabilities...
+2020-02-25T11:46:31.889Z        INFO    Need to update DB
+2020-02-25T11:46:31.889Z        INFO    Downloading DB...
+2020-02-25T11:46:47.474Z        INFO    Reopening DB...
+2020-02-25T11:46:54.146Z        INFO    Detecting Alpine vulnerabilities...
 
 secureimages/teamcity-agent:2019.2.2-alpine-3.11.3 (alpine 3.11.3)
 ==================================================================
