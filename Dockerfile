@@ -9,7 +9,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
     PATH=${PATH}:/usr/lib/jvm/java-1.8-openjdk/bin \
     JAVA_TOOL_OPTIONS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
     GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc \
-    GLIBC_VERSION=2.30-r0
+    GLIBC_VERSION=2.31-r0
 
 ENV CONFIG_FILE=/data/teamcity_agent/conf/buildAgent.properties
 
