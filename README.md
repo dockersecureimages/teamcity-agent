@@ -6,27 +6,27 @@ JetBrains TeamCity Agent, image is based on the Alpine base image with 0 vulnera
 
 Security scanning using Clair
 ```
-clair-scanner secureimages/teamcity-agent:2019.2.3-alpine-3.11.6
-2020/04/25 17:41:18 [INFO] ▶ Start clair-scanner
-2020/04/25 17:41:24 [INFO] ▶ Server listening on port 9279
-2020/04/25 17:41:24 [INFO] ▶ Analyzing a5304328ea0f44bd1ac8bb5416ad6b7cc3b747ac232c6af66d7d9f12e9854344
-2020/04/25 17:41:24 [INFO] ▶ Analyzing 7e0e2a3adfdadab6fcf86befb824c2e1d109360b48d810529dfeab592f85a671
-2020/04/25 17:41:25 [INFO] ▶ Analyzing 7da25c8fbe64b52f68d9a65f10e32df051c4781b7c77782448b337eb983d3911
-2020/04/25 17:41:25 [INFO] ▶ Analyzing fcdb1b3113d8b353eac4d51fa674d00421be0611286b47bfd0082f1714955e92
-2020/04/25 17:41:25 [INFO] ▶ Analyzing 26b13c92550eee1b5a18ecd8a20bc24ef4ab85b9d428f650a3fbf7f40198c335
-2020/04/25 17:41:25 [INFO] ▶ Analyzing aab8f5cfa6316e5abdb94125abbd47fb736121bc9a39cb752f4a64e0b0194d88
-2020/04/25 17:41:25 [INFO] ▶ Analyzing 5059d2787bced9af82aeb88fbb4dc45e686d44b0ab8df5df480ecf20db3c2c9c
-2020/04/25 17:41:25 [INFO] ▶ Image [secureimages/teamcity-agent:2019.2.3-alpine-3.11.6] contains NO unapproved vulnerabilities
+clair-scanner secureimages/teamcity-agent:2019.2.4-alpine-3.11.6
+2020/05/08 18:28:46 [INFO] ▶ Start clair-scanner
+2020/05/08 18:28:51 [INFO] ▶ Server listening on port 9279
+2020/05/08 18:28:51 [INFO] ▶ Analyzing a5304328ea0f44bd1ac8bb5416ad6b7cc3b747ac232c6af66d7d9f12e9854344
+2020/05/08 18:28:52 [INFO] ▶ Analyzing 030ebb34eb52d265ce537561a714d23e744a493866557df8f42689b7ca7197da
+2020/05/08 18:28:52 [INFO] ▶ Analyzing 15a949cc215cc0d5bc67b3d605a046ce3927125249e397916816851ea5b1b95b
+2020/05/08 18:28:52 [INFO] ▶ Analyzing a6d9b63ee204d89aaf1349407f92406359d545e6912c45a3f4b81aa4b90b6b04
+2020/05/08 18:28:52 [INFO] ▶ Analyzing 3c1d8ffd001b07608943fd35751c1eba7c4846e4676106237e916d31d4ea3366
+2020/05/08 18:28:52 [INFO] ▶ Analyzing 2b4ddbcf619f1575dde6bc408a4cef09267d57eed8a12880d8972efca1ab3edf
+2020/05/08 18:28:52 [INFO] ▶ Analyzing 128ec5242042a8ff0e419ae0407153dcb85a2a5bbe179f3281dbe12d2dc47ec0
+2020/05/08 18:28:52 [INFO] ▶ Image [secureimages/teamcity-agent:2019.2.4-alpine-3.11.6] contains NO unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.6.0 --no-progress secureimages/teamcity-agent:2019.2.3-alpine-3.11.6
-2020-04-25T14:41:27.395Z        INFO    Need to update DB
-2020-04-25T14:41:27.395Z        INFO    Downloading DB...
-2020-04-25T14:41:41.947Z        INFO    Detecting Alpine vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.6.0 --no-progress secureimages/teamcity-agent:2019.2.4-alpine-3.11.6
+2020-05-08T15:28:55.140Z        INFO    Need to update DB
+2020-05-08T15:28:55.140Z        INFO    Downloading DB...
+2020-05-08T15:29:07.757Z        INFO    Detecting Alpine vulnerabilities...
 
-secureimages/teamcity-agent:2019.2.3-alpine-3.11.6 (alpine 3.11.6)
+secureimages/teamcity-agent:2019.2.4-alpine-3.11.6 (alpine 3.11.6)
 ==================================================================
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
@@ -35,40 +35,40 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 
 [https://hub.docker.com/r/jetbrains/teamcity-server](https://hub.docker.com/r/jetbrains/teamcity-server)
 ```
-docker pull jetbrains/teamcity-agent:2019.2.3
+docker pull jetbrains/teamcity-agent:2019.2.4
 ```
 
 Security scanning using Clair
 ```
-clair-scanner jetbrains/teamcity-agent:2019.2.3
-2020/04/25 17:41:47 [INFO] ▶ Start clair-scanner
-2020/04/25 17:42:10 [INFO] ▶ Server listening on port 9279
-2020/04/25 17:42:10 [INFO] ▶ Analyzing 9b149207c14ccc7c04f7f633b0a930523710ba21a7b16e2ecfe39d48f66cc21f
-2020/04/25 17:42:10 [INFO] ▶ Analyzing cbdf172a7a4a570fda50e47076f05fe92941ea0c16217fcd49ac46ee77266fdd
-2020/04/25 17:42:10 [INFO] ▶ Analyzing 98558aadc1dc3c58cfaf76054219beebaa9e77fdd4f69cddbdb3c0139b5e2e26
-2020/04/25 17:42:10 [INFO] ▶ Analyzing 0d1696737b748c5cfcab13026189a06bc9af53751a545fb486482c73ff942051
-2020/04/25 17:42:10 [INFO] ▶ Analyzing 154309f8ce1dda37d1385e6985519c626791895279370606e69ee9c13e09c365
-2020/04/25 17:42:10 [INFO] ▶ Analyzing a8ea466a24ddcf94450dcf1d7436db143ef8da2194ba3a9dff1be7d475a81116
-2020/04/25 17:42:10 [INFO] ▶ Analyzing 000e1d94b1a80ef9e26d55072c7a35a594440639b37ed6a9eafef4579df48bd7
-2020/04/25 17:42:10 [INFO] ▶ Analyzing 5f7ffa3377521893ec987290417d19d5c4c0954eb85e00be18334138dbe28578
-2020/04/25 17:42:10 [INFO] ▶ Analyzing 17d541cd36ebb78d3471dc57ef324b73c704af5bfe22f985fba724ea918cedd3
-2020/04/25 17:42:10 [INFO] ▶ Analyzing b6d72aafb1c0ac545b4530f9f0c0ff2e913de269928917c03622d260fb6e72b8
-2020/04/25 17:42:10 [INFO] ▶ Analyzing 5686b011fd77944ee280c6650b5573cc24ed84a40d2525e10e20b1b426aee1c8
-2020/04/25 17:42:10 [INFO] ▶ Analyzing 0e4a3fe1687c7da11f41b09c0b862ffeb2539e653c257ea8974c9e5240fa7f37
-2020/04/25 17:42:11 [INFO] ▶ Analyzing 0f8c2f8f68b43dd77c1542f806aa6f8b62c9c0da988c5b1179913733c7b0681f
-2020/04/25 17:42:11 [INFO] ▶ Analyzing f3bd3b6addbd4e780ad27a0e2464233533f114e471f085f8fce2fd58b52660cf
-2020/04/25 17:42:11 [WARN] ▶ Image [jetbrains/teamcity-agent:2019.2.3] contains 71 total vulnerabilities
-2020/04/25 17:42:11 [ERRO] ▶ Image [jetbrains/teamcity-agent:2019.2.3] contains 71 unapproved vulnerabilities
+clair-scanner jetbrains/teamcity-agent:2019.2.4
+2020/05/08 18:29:13 [INFO] ▶ Start clair-scanner
+2020/05/08 18:29:35 [INFO] ▶ Server listening on port 9279
+2020/05/08 18:29:35 [INFO] ▶ Analyzing 6ef5a7b6cc6da3fe4489191c166763832ff732b6c346e7d77a2dbbd3e89a9f08
+2020/05/08 18:29:35 [INFO] ▶ Analyzing c774328901d4a9ee5201de46d502b8f56f9b6a5d21c64affa6ca96d3b69cfe68
+2020/05/08 18:29:35 [INFO] ▶ Analyzing 67b382b86062872cc280027bfb3cc103cba4e52bb66d23c590e0cb8647dd39fe
+2020/05/08 18:29:35 [INFO] ▶ Analyzing 4e0bca968c343d4488ae5b156e0b4a6630a6964bd401264b3fe9060a266f4ce7
+2020/05/08 18:29:35 [INFO] ▶ Analyzing ed65ae13ac8085a69111a0abce3fbc7c0d888204c6c6d87b18c0d2b5a98b7c6a
+2020/05/08 18:29:35 [INFO] ▶ Analyzing 13e876cf9db2305c5db6a82ccd8352208a649f699ca91f015b33e127fd6dd0b0
+2020/05/08 18:29:35 [INFO] ▶ Analyzing 02094e73485fa60371b994cd670de11947c5dc4b5b21f7806c382c461c9a7eb1
+2020/05/08 18:29:35 [INFO] ▶ Analyzing f55eafc9cde01fcff627d570daff5685d1a12861223c92d8aa462c57720d080c
+2020/05/08 18:29:35 [INFO] ▶ Analyzing e593e5cf63701f411415a6922cf6781be15bd4ee38d0ff35bc1497da91c097e0
+2020/05/08 18:29:35 [INFO] ▶ Analyzing 9143f1320f1f37a50e9bc984518c97e5ac0183e5b72a7406ea514e9e51328fd9
+2020/05/08 18:29:35 [INFO] ▶ Analyzing 511896e706fb36ec85c8ab16821eb73633e2ffd4bedb4b6948544bab25d8cfc5
+2020/05/08 18:29:35 [INFO] ▶ Analyzing 25f1c26f5f507efd18d2dd5261c6762d3fa034caafeb1532248acdc8ec33550d
+2020/05/08 18:29:36 [INFO] ▶ Analyzing 47c06ad96e597bc9a108a45284be157e7f16832e2841ee70837bbe8b52f17f28
+2020/05/08 18:29:36 [INFO] ▶ Analyzing 91825d8eb24706baff91e9362e735d98db4a45c8484f058b90d4173318aa61f7
+2020/05/08 18:29:36 [WARN] ▶ Image [jetbrains/teamcity-agent:2019.2.4] contains 66 total vulnerabilities
+2020/05/08 18:29:36 [ERRO] ▶ Image [jetbrains/teamcity-agent:2019.2.4] contains 66 unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.6.0 --no-progress jetbrains/teamcity-agent:2019.2.3
-2020-04-25T14:42:13.791Z        INFO    Need to update DB
-2020-04-25T14:42:13.791Z        INFO    Downloading DB...
-2020-04-25T14:42:42.522Z        INFO    Detecting Ubuntu vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.6.0 --no-progress jetbrains/teamcity-agent:2019.2.4
+2020-05-08T15:29:37.996Z        INFO    Need to update DB
+2020-05-08T15:29:37.996Z        INFO    Downloading DB...
+2020-05-08T15:30:06.422Z        INFO    Detecting Ubuntu vulnerabilities...
 
-jetbrains/teamcity-agent:2019.2.3 (ubuntu 18.04)
+jetbrains/teamcity-agent:2019.2.4 (ubuntu 18.04)
 ================================================
-Total: 198 (UNKNOWN: 0, LOW: 24, MEDIUM: 132, HIGH: 42, CRITICAL: 0)
+Total: 180 (UNKNOWN: 0, LOW: 24, MEDIUM: 124, HIGH: 32, CRITICAL: 0)
 ```
