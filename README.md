@@ -2,74 +2,75 @@
 
 JetBrains TeamCity Agent, image is based on the Alpine base image with 0 vulnerabilities.
 
-## Current Docker image (~535MB)
+## Current Docker image (~530MB)
 
 Security scanning using Clair
 ```
-clair-scanner secureimages/teamcity-agent:2020.1-alpine-3.12.0
-2020/06/11 11:52:59 [INFO] ▶ Start clair-scanner
-2020/06/11 11:53:04 [INFO] ▶ Server listening on port 9279
-2020/06/11 11:53:04 [INFO] ▶ Analyzing 76de98d374759ed05698adec9aa042db7bc0f62c25fb612c0f9be1419a581421
-2020/06/11 11:53:04 [INFO] ▶ Analyzing 2b0ea4b93f47688bf27425f51852d7387c024a07c8497f54659fa1f12cc6d18c
-2020/06/11 11:53:05 [INFO] ▶ Analyzing 5a3d43915b87af7c9da9aef550d180f442c7d88834d1142a422a8478ea1bdf9e
-2020/06/11 11:53:05 [INFO] ▶ Analyzing 460b62f55cb236c57ed7534363469ae3af57fc38e4cb94b83c54eb67ba2d4c52
-2020/06/11 11:53:05 [INFO] ▶ Analyzing 004f0abda41dda09fe48b8b39f31f4113b4dbbdbc3425d1ca86a5076f1f903a4
-2020/06/11 11:53:05 [INFO] ▶ Analyzing c46223c689aab581f97f4ceaa8f36c0f00661431675960cc7d8f00d5b0235682
-2020/06/11 11:53:05 [INFO] ▶ Analyzing 364c84b408eb70ff631bdeea6ab8edc4f9fea5b2352a9e721a4b12c10407bb64
-2020/06/11 11:53:05 [INFO] ▶ Image [secureimages/teamcity-agent:2020.1-alpine-3.12.0] contains NO unapproved vulnerabilities
+clair-scanner secureimages/teamcity-agent:2020.1.1-alpine-3.12.0
+2020/06/23 16:59:20 [INFO] ▶ Start clair-scanner
+2020/06/23 16:59:25 [INFO] ▶ Server listening on port 9279
+2020/06/23 16:59:25 [INFO] ▶ Analyzing 76de98d374759ed05698adec9aa042db7bc0f62c25fb612c0f9be1419a581421
+2020/06/23 16:59:25 [INFO] ▶ Analyzing 06e9c7e1906b22631c6e96316342d6d3da47eab969dbe96b65e3d6feb5e0c7d6
+2020/06/23 16:59:26 [INFO] ▶ Analyzing 427d1e185e6bee007230f2b7ae36c307527c0dcbf6f9b2d5cbe0f9c0739f286c
+2020/06/23 16:59:26 [INFO] ▶ Analyzing 1521f2e5e28ced168221a1e29da7499d5fc691ec1530b31fcfad1cc8c7e4566d
+2020/06/23 16:59:26 [INFO] ▶ Analyzing b758212c243a10d25b302f7fa3a3ccec24320866a942eac965264773b5897870
+2020/06/23 16:59:26 [INFO] ▶ Analyzing c6861ffe6619db79f22225592b2b3f8b4263a2c691448ab8043932ed680b8d1f
+2020/06/23 16:59:26 [INFO] ▶ Analyzing 07f89c09ee1f6681374a788de91d3687fb2368ec2adae3bfd3b1452c8d889601
+2020/06/23 16:59:26 [INFO] ▶ Image [secureimages/teamcity-agent:2020.1.1-alpine-3.12.0] contains NO unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress secureimages/teamcity-agent:2020.1-alpine-3.12.0
-2020-06-11T08:53:08.108Z        INFO    Need to update DB
-2020-06-11T08:53:08.108Z        INFO    Downloading DB...
-2020-06-11T08:53:18.918Z        INFO    Detecting Alpine vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress secureimages/teamcity-agent:2020.1.1-alpine-3.12.0
+2020-06-23T13:59:32.318Z        INFO    Need to update DB
+2020-06-23T13:59:32.318Z        INFO    Downloading DB...
+2020-06-23T13:59:43.279Z        INFO    Detecting Alpine vulnerabilities...
 
-secureimages/teamcity-agent:2020.1-alpine-3.12.0 (alpine 3.12.0)
-================================================================
+secureimages/teamcity-agent:2020.1.1-alpine-3.12.0 (alpine 3.12.0)
+==================================================================
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
+
 ```
 
 ## Official Docker image (~1.34GB)
 
 [https://hub.docker.com/r/jetbrains/teamcity-server](https://hub.docker.com/r/jetbrains/teamcity-server)
 ```
-docker pull jetbrains/teamcity-agent:2020.1
+docker pull jetbrains/teamcity-agent:2020.1.1
 ```
 
 Security scanning using Clair
 ```
-clair-scanner jetbrains/teamcity-agent:2020.1
-2020/06/11 11:53:25 [INFO] ▶ Start clair-scanner
-2020/06/11 11:53:50 [INFO] ▶ Server listening on port 9279
-2020/06/11 11:53:50 [INFO] ▶ Analyzing 6ef5a7b6cc6da3fe4489191c166763832ff732b6c346e7d77a2dbbd3e89a9f08
-2020/06/11 11:53:50 [INFO] ▶ Analyzing c774328901d4a9ee5201de46d502b8f56f9b6a5d21c64affa6ca96d3b69cfe68
-2020/06/11 11:53:50 [INFO] ▶ Analyzing 67b382b86062872cc280027bfb3cc103cba4e52bb66d23c590e0cb8647dd39fe
-2020/06/11 11:53:50 [INFO] ▶ Analyzing 4e0bca968c343d4488ae5b156e0b4a6630a6964bd401264b3fe9060a266f4ce7
-2020/06/11 11:53:50 [INFO] ▶ Analyzing c49028ca3032013fb4b222de627272dbeb7ecdff6828d2561eb792de93f9664d
-2020/06/11 11:53:50 [INFO] ▶ Analyzing abe66352c3779bd54f807322d43e5d1ecc240a03a0c32bf651eb237b0ea57a21
-2020/06/11 11:53:50 [INFO] ▶ Analyzing 19b1a1bf8f690927ea4eb372fc84a1fd3dd1f20eed013dadd2171478f3fdc9c9
-2020/06/11 11:53:50 [INFO] ▶ Analyzing f2e5315f33b02f24863c516244d47ba21493d43c022493d667a48618d5f209c1
-2020/06/11 11:53:50 [INFO] ▶ Analyzing af15e3deca57f8bb8b480c1bb11546ebe3da18eb1a799aa20f92d94b427ad62d
-2020/06/11 11:53:50 [INFO] ▶ Analyzing a73d8855cab2a64c2a973be9b48cf3c6aad84f19eeb2f7d06b853f589ffd3a08
-2020/06/11 11:53:50 [INFO] ▶ Analyzing 5bb92d091b2106d869b1eceb7c5403daa6e0ab78566e17eb13fa8f8273ae6828
-2020/06/11 11:53:50 [INFO] ▶ Analyzing 6c828cc85fb564bf1890656b4a009b9cc5f84c0f20303b45ce480c91f48e3406
-2020/06/11 11:53:50 [INFO] ▶ Analyzing 2ed7fc00370c71952fec1f4fda2d46d963e9414e32bbaa530520e2e19468ebb1
-2020/06/11 11:53:50 [INFO] ▶ Analyzing b546b0246dec5b8930baefe69156c832bc0c28490df5c6f58debb564b9787276
-2020/06/11 11:53:50 [INFO] ▶ Analyzing ecfe1b8fc707f7718c897dfb26d0b2592d24dd60897c8f661f8fe6dda0f6dde6
-2020/06/11 11:53:50 [WARN] ▶ Image [jetbrains/teamcity-agent:2020.1] contains 73 total vulnerabilities
-2020/06/11 11:53:50 [ERRO] ▶ Image [jetbrains/teamcity-agent:2020.1] contains 73 unapproved vulnerabilities
+clair-scanner jetbrains/teamcity-agent:2020.1.1
+2020/06/23 16:59:48 [INFO] ▶ Start clair-scanner
+2020/06/23 17:00:09 [INFO] ▶ Server listening on port 9279
+2020/06/23 17:00:09 [INFO] ▶ Analyzing 4046a0366bf3d63d6ebb165835dd7cd4a72c49d65942a66efb1b4a44bf5803b2
+2020/06/23 17:00:09 [INFO] ▶ Analyzing cb6f8e1a8e2c47f2e7eda433f9afb3ce6debe0131ba556f6ab516f1092b589be
+2020/06/23 17:00:09 [INFO] ▶ Analyzing f81f5853c77138f4f3bef3fe7a639070314c8b38f66f03f57055b5d9055c5c7a
+2020/06/23 17:00:09 [INFO] ▶ Analyzing 5171a8ddd9ca89e576ef04f932cfff352168ff2e06f856cc05d09b998989c8c5
+2020/06/23 17:00:09 [INFO] ▶ Analyzing d7020ea86a8e49d3df5c284ed7d190a6ad7f31c4966516c1460523a2970a6347
+2020/06/23 17:00:09 [INFO] ▶ Analyzing 347b4f049210a3da755c9cd385d65bf3ec4b40650e4f554306e1aa121fa2906b
+2020/06/23 17:00:09 [INFO] ▶ Analyzing bace7ae0f99261c3e53d7f9fdd69e4d463dfe6461cd4b7f2a3a605ff6269460f
+2020/06/23 17:00:09 [INFO] ▶ Analyzing 139b53839a4323a74d56ec8c1a35e8eaaf9b5b3e801033b219de64979d90c327
+2020/06/23 17:00:09 [INFO] ▶ Analyzing 5831b65606c031c3533d6b1885ef7f326b6f06efe6de7f667a37b07a61ac5c74
+2020/06/23 17:00:09 [INFO] ▶ Analyzing ee80123a7fd4b13086ac49be10f37e623f71e884ebff59f60979bb6ede03a57a
+2020/06/23 17:00:09 [INFO] ▶ Analyzing bfaff769dffdfdeb9d0e8023bfbe7045616873342dba9544dfc612c32ecbb220
+2020/06/23 17:00:09 [INFO] ▶ Analyzing cb663b573c8379244d4b3c604ab40adc8eb45b32ea3520d336c4e879490f2fad
+2020/06/23 17:00:09 [INFO] ▶ Analyzing bcc6a38c5f6905bc567abb6759596a11fa6d68426674f9711b19501d80b87267
+2020/06/23 17:00:10 [INFO] ▶ Analyzing 4cc83d336e6540a5d7d1451328e8d17dce9862748453b38e079b14a71b665a89
+2020/06/23 17:00:10 [INFO] ▶ Analyzing 711bfd752f3325a9fad13a8cafa9c4b13d980133c3fa1dcdef80c52382af72ee
+2020/06/23 17:00:10 [WARN] ▶ Image [jetbrains/teamcity-agent:2020.1.1] contains 63 total vulnerabilities
+2020/06/23 17:00:10 [ERRO] ▶ Image [jetbrains/teamcity-agent:2020.1.1] contains 63 unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress jetbrains/teamcity-agent:2020.1
-2020-06-11T08:54:06.341Z        INFO    Need to update DB
-2020-06-11T08:54:06.341Z        INFO    Downloading DB...
-2020-06-11T08:54:40.114Z        INFO    Detecting Ubuntu vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress jetbrains/teamcity-agent:2020.1.1
+2020-06-23T14:00:16.496Z        INFO    Need to update DB
+2020-06-23T14:00:16.496Z        INFO    Downloading DB...
+2020-06-23T14:00:41.532Z        INFO    Detecting Ubuntu vulnerabilities...
 
-jetbrains/teamcity-agent:2020.1 (ubuntu 18.04)
-==============================================
-Total: 202 (UNKNOWN: 0, LOW: 147, MEDIUM: 55, HIGH: 0, CRITICAL: 0)
+jetbrains/teamcity-agent:2020.1.1 (ubuntu 18.04)
+================================================
+Total: 187 (UNKNOWN: 0, LOW: 134, MEDIUM: 53, HIGH: 0, CRITICAL: 0)
 ```
