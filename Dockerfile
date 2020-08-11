@@ -3,13 +3,13 @@ LABEL website="Secure Docker Images https://secureimages.dev"
 LABEL description="We secure your business from scratch."
 LABEL maintainer="hireus@secureimages.dev"
 
-ARG TEAMCITY_VERSION=2020.1.2
+ARG TEAMCITY_VERSION=2020.1.3
 
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
     PATH=${PATH}:/usr/lib/jvm/java-1.8-openjdk/bin \
     JAVA_TOOL_OPTIONS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap" \
     GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc \
-    GLIBC_VERSION=2.31-r0
+    GLIBC_VERSION=2.32-r0
 
 ENV CONFIG_FILE=/data/teamcity_agent/conf/buildAgent.properties
 
